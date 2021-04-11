@@ -1,7 +1,7 @@
 body {
     margin: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     align-items: center;
     font-size: 18px;
     background-color: #131212;
@@ -34,17 +34,18 @@ h1 {
     max-width: 900px;
     border-radius: 4px;
     margin: 24px 24px 0;
-    padding: 20px;
+    padding:20px;
     display: flex;
+    flex-direction:column;
     justify-content:space-around;
     align-items: center;
     align-content: center;
     background:#161616;
     border-style: solid;
     border-width: 1px;
-    border-color:black;
+    border-color: black;
     box-shadow: 0 0 4em rgba(252, 212, 156, 0.2);
-   
+    
 }
 
 .api-content {
@@ -61,51 +62,88 @@ h1 {
     width:50%;
     height:100%;
 }
+.api-content3 {
+    font-weight: bold;
+    font-style: italic;
+    color: #999;
+    width:50%;
+    height:100%;
+}
+.btn{
+    margin:5px;
+}
 .card{
     height:100%;
     background-color: rgb(134, 114, 1);
     color:black;
-    width:75%;
+    width:80%;
     display: flex;
     border:5px solid rgb(134, 114, 1);
-
 }
 .card img{
     height:50%;
 }
-.card-body{
-    display:flex;
-    flex-direction: column;
-    justify-content:space-between;
-    align-items:stretch; 
-    display: flex;
-
-
-}
 .card-body input{
     width:90%;
 }
-.card-body button{
-    width:90%;
+
+.card p{
+    display:inline;
+}
+input{
+    background-color:gold;
 }
 
 .carousel{
-    height:100%;
+    display: flex;
     border:5px solid rgb(134, 114, 1);
-    display:flex;
-
+    height:100%;
+    width:100%;
     
 }
-.carousel-item img{
-    height:75vh;
-    object-fit:cover;
+.carousel li{
+    color:black;
+}
+.carousel h1{
+    color:black;
+}
+.carousel-item-active{
+    color:black;
+}
+.carousel button{
+    color:black;
+}
+.carousel img{
+    width:300px;
+    height:600px;
+    object-fit: cover;
 }
 
+ul{
+    list-style: none;
+}
+li{
+    list-style: none;
+}
+p{
+    color:blue;
+}
+
+.carousel-caption>h1{
+    margin-left: 25px;
+    
+}
+.carousel-caption{
+    margin-bottom: 350px;
+}
+h2{
+    visibility: hidden;
+}
 
 @media only screen and (max-width: 600px) {
     .api-section {
-      flex-direction: column;
-      height:100vh;
+        flex-direction: column;
+        height:100vh;
     }
     .api-content{
         width:100%;
@@ -115,4 +153,4 @@ h1 {
         width:100%;
         height:50%;
     }
-  }
+}
