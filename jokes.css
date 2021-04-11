@@ -136,7 +136,11 @@ p{
 .carousel-caption{
     margin-bottom: 350px;
 }
+h1{
+    color:gold;
+}
 h2{
+    color:gold;
     visibility: hidden;
 }
 
