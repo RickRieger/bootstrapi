@@ -23,7 +23,7 @@ function getWeather(){
         
         if(data.message === 'NOT_FOUND'){
             alert('No data available, please choose another city!');
-            exit;
+            return;
         }
         
         carousal.innerText = '';
@@ -31,7 +31,7 @@ function getWeather(){
         wind.innerText = data.wind;
         desc.innerText = data.description;
         
-        console.log(data);
+        
 
         weatherObjectArray.push({
             city: city,
@@ -40,7 +40,7 @@ function getWeather(){
             description: data.description
         });
 
-        console.log(weatherObjectArray);
+       
         
 
         for(const object of weatherObjectArray){
@@ -66,42 +66,42 @@ function getWeather(){
         divItem.className = "carousel-item";
         }
 
-        
         img.className = 'd-block w-100';
 
         divCaption.className = 'carousel-caption d-none d-md-block';
         
-       
         //Handle img src
-        if (object.description.includes('Sunny'||'sunny')){
+        if (object.description.toLowerCase().includes('sunny')){
             img.src = 'images/sunny.jpg';
         }
-        if (object.description.includes('cloudy'||'Cloudy')){
+        if (object.description.toLowerCase().includes('cloudy')){
             img.src = 'images/cloudy.jpg';
         }
-        if (object.description.includes('rain'||'Rain')){
+        if (object.description.toLowerCase().includes('rain')){
             img.src = 'images/rain.jpg';
         }
-        if (object.description.includes('snow'||'Snow')){
-            img.src = 'images/snow.jpg';
+        if (object.description.toLowerCase().includes('drizzle')){
+            img.src = 'images/rain.jpg';
         }
-
+        if (object.description.toLowerCase().includes('clear')){
+            img.src = 'images/sunny.jpg';
+        }
         
         //Handle innerText
         h1.innerText = object.city;
         liOne.innerText = `Temperature: ${object.temperature}`;
         liTwo.innerText = `Wind: ${object.wind}`;
         liThree.innerText = `Description: ${object.description}`;
+
         //Handle append to element
         divCaption.append(h1);
         divCaption.append(liOne);
         divCaption.append(liTwo);
         divCaption.append(liThree);
-
-
-
+        
         divItem.append(img);
         divItem.append(divCaption);
+
         //Handle append to Element on dom
         carousal.append(divItem);
 
